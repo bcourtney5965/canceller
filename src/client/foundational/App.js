@@ -7,22 +7,35 @@ class App extends React.Component {
     }
   }
 
-  handleTextChange(e) {
+  updateState(field, event) {
+    var object = {};
+    object[field] = event.target.value;
+    this.setState(object);
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    var text = this.state.text.trim();
+    if (!text) {
+      return;
+    }
+
+    var dataToSend = {githubHandle: text};
     this.setState({
-      text: e.target.value
-    })
+      text: ''
+    });
   }
 
   render(){
     return (
       <div>
-        <div>GitHub Handle (Omit leading '@')</div>
-        <form className="commentForm" onSubmit={this.handleSubmit}>
+        <form className="commentForm" onSubmit={this.handleSubmit.bind(this)}>
+          GitHub Handle (Omit any leading '@')<br />
           <input
             type="text"
             placeholder="Github Handle"
             value={this.state.text}
-            onChange={this.handleTextChange}
+            onChange={this.updateState.bind(this, 'text')} 
           />
           <input type="submit" value="Submit" />
         </form>
