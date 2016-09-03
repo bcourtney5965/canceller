@@ -1,12 +1,12 @@
 var express = require('express');
 var app = express();
+var path = require('path');
 
-var port = 3000;
+app.use(express.static(path.join(__dirname, '..', 'client')));
 
-app.get('/', function (req, res) {
-  res.send('Hello World! You are in server');
+//for testing
+app.get('/test', function(req, res) {
+  console.log('inside \'/test\' route');
+  res.json({this: 'is a test'});
 });
-
-app.listen(port, function () {
-  console.log('Canceller app listening on port#', port);
-});
+module.exports = app;

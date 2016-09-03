@@ -1,12 +1,12 @@
 module.exports = {
-  entry: './src/client/foundational/main.js',
+  entry: './src/client/main.js',
   output: {
-    path: './src/client/foundational',
+    path: './src/client/',
     filename: 'index.js'
   },
   devServer: {
-    inline: true,
-    port: 3333
+    inline:  true,
+    port: 3000
   },
   module: {
     loaders: [

@@ -1,6 +1,8 @@
 #custom
 directions.txt
 issues.txt
+RupasRequirements.txt
+.gitignore
 
 ### node etc ###
 node_modules
