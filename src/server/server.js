@@ -1,8 +1,11 @@
 var express = require('express');
 var app = express();
 var path = require('path');
+var middleware = require('./middleware');
 
 app.use(express.static(path.join(__dirname, '..', 'client')));
+
+middleware(app);
 
 //for testing
 app.get('/test', function(req, res) {
