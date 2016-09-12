@@ -21471,25 +21471,35 @@
 	        return;
 	      }
 
-	      var dataToSend = { githubHandle: handle };
+	      var dataToSend = { "githubHandle": handle };
 	      console.log('dataToSend = ', dataToSend);
-	      this.setState({
-	        handle: ''
+
+	      $.post('http://localhost:3000/api/', dataToSend, function (response) {
+	        console.log('response = ', response);
 	      });
 
-	      (0, _isomorphicFetch2.default)('http://localhost:3000/test1', {
-	        method: 'POST',
-	        headers: {
-	          'Accept': 'application/json',
-	          'Content-Type': 'application/json'
-	        },
-	        body: JSON.stringify({
-	          message: 'please work'
-	        })
-	      }).then(function (response) {
-	        console.log(response);
-	      }).catch(function (error) {
-	        console.log(error);
+	      // fetch('http://localhost:3000', {
+	      //   method: 'POST',
+	      //   header: {
+	      //     'Accept': 'application/json',
+	      //     'Content-Type': 'application/json'
+	      //   },
+	      //   body: "======"
+	      // })
+	      //   .then(function (res) {
+	      //     console.log('res = ', res)
+	      //     return res.json();
+	      //   })
+	      //   .then(function (resJson) {
+	      //     console.log('resJson = ', resJson);
+	      //     return resJson;
+	      //   })
+	      //   .catch(function (error) {
+	      //     console.log(error);
+	      //   });
+
+	      this.setState({
+	        handle: ''
 	      });
 	    }
 	  }, {

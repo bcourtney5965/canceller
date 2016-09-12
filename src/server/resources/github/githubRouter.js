@@ -1,10 +1,12 @@
 var githubRouter = require('express').Router();
-var githubController = require('./githubController.js');
+// var githubController = require('./githubController.js');
 
 githubRouter.route('/')
-  .get((req, res) => {
+  .post((req, res) => {
     console.log('inside githubRouter');
-    res.end();
+    console.log('req.body = ', req.body);
+    // res.end();
+    res.status(200).json('inside githubRouter')
   });
 
 module.exports = githubRouter;
