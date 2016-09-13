@@ -23,16 +23,14 @@ class App extends React.Component {
     }
 
     var dataToSend = {"githubHandle": handle};
-    console.log('dataToSend = ', dataToSend);
-
+    // console.log('dataToSend = ', dataToSend);
     $.post('http://localhost:3000/api/', dataToSend, function(response) {
       console.log('response = ', response);
     });
-
-      this.setState({
-        handle: ''
-      });
-
+    
+    this.setState({
+      handle: ''
+    });
   }
 
   render(){
