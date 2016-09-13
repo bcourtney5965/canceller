@@ -1,7 +1,5 @@
-var githubRouter = require('../resources/github/githubRouter.js');
-// var router = require. 
-
+var router = require('../resources/controller');
 
 module.exports = function(app) {
-  app.use('/api', githubRouter);
+  app.use('/api', router);
 }

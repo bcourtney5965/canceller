@@ -21478,26 +21478,6 @@
 	        console.log('response = ', response);
 	      });
 
-	      // fetch('http://localhost:3000', {
-	      //   method: 'POST',
-	      //   header: {
-	      //     'Accept': 'application/json',
-	      //     'Content-Type': 'application/json'
-	      //   },
-	      //   body: "======"
-	      // })
-	      //   .then(function (res) {
-	      //     console.log('res = ', res)
-	      //     return res.json();
-	      //   })
-	      //   .then(function (resJson) {
-	      //     console.log('resJson = ', resJson);
-	      //     return resJson;
-	      //   })
-	      //   .catch(function (error) {
-	      //     console.log(error);
-	      //   });
-
 	      this.setState({
 	        handle: ''
 	      });
