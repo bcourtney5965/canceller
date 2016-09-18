@@ -3,6 +3,7 @@ directions.txt
 issues.txt
 RupasRequirements.txt
 .gitignore
+tool.js
 
 ### node etc ###
 node_modules
