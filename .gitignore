@@ -1,9 +1,7 @@
 #custom
-directions.txt
-issues.txt
-RupasRequirements.txt
 .gitignore
 tool.js
+notes.txt
 
 ### node etc ###
 node_modules
