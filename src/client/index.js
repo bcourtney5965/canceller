@@ -21490,7 +21490,7 @@
 	        _react2.default.createElement(
 	          'form',
 	          { className: 'commentForm', onSubmit: this.handleSubmit.bind(this) },
-	          'GitHub Handle (Omit any leading \'@\')',
+	          'GitHub Handles (Omit any commas or leading \'@\'.  Separate handles with white space)',
 	          _react2.default.createElement('br', null),
 	          _react2.default.createElement('input', {
 	            type: 'text',

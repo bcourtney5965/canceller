@@ -9,7 +9,7 @@ module.exports = function(namesList) {
   exec(`forkchop tmr hackreactor fulcrum-students ${namesList}`, (error, stdout, stderr) => {
     console.log('inside .exec');
     if (error) {
-      console.error(`Brandon, you have an error - exec error: ${error}`);
+      console.error(`You have an error - exec error: ${error}`);
       return;
     }
     console.log('inside non-error part of exec');

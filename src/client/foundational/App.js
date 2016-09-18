@@ -37,7 +37,7 @@ class App extends React.Component {
     return (
       <div>
         <form className="commentForm" onSubmit={this.handleSubmit.bind(this)}>
-          GitHub Handle (Omit any leading '@')<br />
+          GitHub Handles (Omit any commas or leading '@'.  Separate handles with white space)<br />
           <input
             type="text"
             placeholder="Github Handle"
