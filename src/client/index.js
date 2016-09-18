@@ -21450,7 +21450,7 @@
 	    var _this = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this));
 
 	    _this.state = {
-	      handle: ''
+	      names: ''
 	    };
 	    return _this;
 	  }
@@ -21466,19 +21466,19 @@
 	    key: 'handleSubmit',
 	    value: function handleSubmit(e) {
 	      e.preventDefault();
-	      var handle = this.state.handle.trim();
-	      if (!handle) {
+	      var names = this.state.names.trim();
+	      if (!names) {
 	        return;
 	      }
 
-	      var dataToSend = { "githubHandle": handle };
+	      var dataToSend = { "names": names };
 	      // console.log('dataToSend = ', dataToSend);
 	      $.post('http://localhost:3000/api/', dataToSend, function (response) {
 	        console.log('response = ', response);
 	      });
 
 	      this.setState({
-	        handle: ''
+	        names: ''
 	      });
 	    }
 	  }, {
@@ -21495,16 +21495,16 @@
 	          _react2.default.createElement('input', {
 	            type: 'text',
 	            placeholder: 'Github Handle',
-	            value: this.state.handle,
-	            onChange: this.updateState.bind(this, 'handle')
+	            value: this.state.names,
+	            onChange: this.updateState.bind(this, 'names')
 	          }),
 	          _react2.default.createElement('input', { type: 'submit', value: 'Submit' })
 	        ),
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'this.state.handle = ',
-	          this.state.handle
+	          'this.state.names = ',
+	          this.state.names
 	        )
 	      );
 	    }

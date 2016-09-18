@@ -1,13 +1,8 @@
-// exports = module.exports = {}; // use exports for mutiples - module.exports for single functions
 var router = require('express').Router();
 const exec = require('child_process').exec;
-// pqoueythnsjhfk
 
-module.exports = function(namesList) {
-  console.log(`namesList in gitHubController = ${namesList}`);
-  // exec('echo "hello" >> ./resources/controller/pqoueythnsjhfk3.txt', (error, stdout, stderr) => {  // works 
-  exec(`forkchop tmr hackreactor fulcrum-students ${namesList}`, (error, stdout, stderr) => {
-    console.log('inside .exec');
+module.exports = function(names) {
+  exec(`echo ${names} | forkchop tmr hackreactor fulcrum-students`, (error, stdout, stderr) => {
     if (error) {
       console.error(`You have an error - exec error: ${error}`);
       return;
@@ -17,9 +12,3 @@ module.exports = function(namesList) {
     console.log(`stderr: ${stderr}`);
   });
 }
-
-/*
-exec("cat example.txt | forkchop tmr hackreactor fulcrum-students")
-"tmr hackreactor fulcrum-students 'member1 member2'"
-"echo 'member1 member2' | forkchop tmr hackreactor fulcrum-students"
-*/
