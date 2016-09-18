@@ -5,7 +5,7 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      handle: ''
+      names: ''
     }
   }
 
@@ -17,19 +17,19 @@ class App extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const handle = this.state.handle.trim();
-    if (!handle) {
+    const names = this.state.names.trim();
+    if (!names) {
       return;
     }
 
-    var dataToSend = {"githubHandle": handle};
+    var dataToSend = {"names": names};
     // console.log('dataToSend = ', dataToSend);
     $.post('http://localhost:3000/api/', dataToSend, function(response) {
       console.log('response = ', response);
     });
     
     this.setState({
-      handle: ''
+      names: ''
     });
   }
 
@@ -41,12 +41,12 @@ class App extends React.Component {
           <input
             type="text"
             placeholder="Github Handle"
-            value={this.state.handle}
-            onChange={this.updateState.bind(this, 'handle')} 
+            value={this.state.names}
+            onChange={this.updateState.bind(this, 'names')} 
           />
           <input type="submit" value="Submit" />
         </form>
-        <p>this.state.handle = {this.state.handle}</p>
+        <p>this.state.names = {this.state.names}</p>
       </div>
     )
   }
